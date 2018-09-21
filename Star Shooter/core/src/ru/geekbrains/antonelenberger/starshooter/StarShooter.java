@@ -8,12 +8,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import ru.geekbrains.antonelenberger.starshooter.screen.MenuScreen;
+import ru.geekbrains.antonelenberger.starshooter.screen.MenuScreen2;
 
 public class StarShooter extends Game {
 
 	@Override
 	public void create() {
-		setScreen(new MenuScreen(this));
+		setScreen(new MenuScreen2(this));
 	}
 }
 //	SpriteBatch batch;
