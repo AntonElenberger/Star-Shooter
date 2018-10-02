@@ -2,6 +2,7 @@ package ru.geekbrains.antonelenberger.starshooter.screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -29,6 +30,8 @@ public class MenuScreen2 extends Base2DScreen implements ActionListener{
 
     Star[] star;
 
+    private Music backgroundMusic;
+
     public MenuScreen2(Game game) {
         super(game);
     }
@@ -45,6 +48,9 @@ public class MenuScreen2 extends Base2DScreen implements ActionListener{
         for (int i = 0; i < star.length; i++) {
             star[i] = new Star(atlas);
         }
+        backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("music/backgroundmenu.mp3"));
+        backgroundMusic.setLooping(true);
+        backgroundMusic.play();
     }
 
     @Override
@@ -87,6 +93,7 @@ public class MenuScreen2 extends Base2DScreen implements ActionListener{
     public void dispose() {
         bg.dispose();
         atlas.dispose();
+        backgroundMusic.dispose();
         super.dispose();
     }
 
