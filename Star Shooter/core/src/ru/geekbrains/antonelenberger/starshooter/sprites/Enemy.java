@@ -13,7 +13,7 @@ public class Enemy extends Ship {
     private MainShip mainShip;
 
     private Vector2 v0 = new Vector2();
-    private Vector2 vArrival = new Vector2(0, 0.15f);
+    private Vector2 vArrival = new Vector2(0, -0.15f);
 
 
     public Enemy(BulletPool bulletPool, Sound shootSound, MainShip mainShip, Rect worldBounds) {
