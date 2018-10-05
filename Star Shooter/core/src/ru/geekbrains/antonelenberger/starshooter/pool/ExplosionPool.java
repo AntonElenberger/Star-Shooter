@@ -1,21 +1,25 @@
 package ru.geekbrains.antonelenberger.starshooter.pool;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import ru.geekbrains.antonelenberger.starshooter.base.SpritesPool;
 import ru.geekbrains.antonelenberger.starshooter.sprites.Explosion;
 
-public class ExplosionPool extends SpritesPool {
+public class ExplosionPool extends SpritesPool<Explosion> {
 
     private final TextureRegion textureRegion;
 
-    public ExplosionPool(TextureAtlas atlas) {
+    private Sound explosionSound;
+
+    public ExplosionPool(TextureAtlas atlas, Sound explosionSound) {
         this.textureRegion = atlas.findRegion("explosion");
+        this.explosionSound = explosionSound;
     }
 
     @Override
     protected Explosion newObject() {
-        return new Explosion(textureRegion, 9, 9, 74);
+        return new Explosion(textureRegion, 9, 9, 74, explosionSound);
     }
 }
