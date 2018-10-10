@@ -21,7 +21,7 @@ public abstract class SpritesPool<T extends Sprite> {
             object = freeObjects.remove(freeObjects.size() - 1);
         }
         activeObjects.add(object);
-        log();
+
         return object;
     }
 
@@ -45,10 +45,14 @@ public abstract class SpritesPool<T extends Sprite> {
         }
     }
 
+    public void freeAllActiveObjects() {
+        freeObjects.addAll(activeObjects);
+        activeObjects.clear();
+    }
+
     private void free(T object) {
         if (activeObjects.remove(object)) {
             freeObjects.add(object);
-            log();
         }
     }
 
@@ -69,8 +73,6 @@ public abstract class SpritesPool<T extends Sprite> {
         activeObjects.clear();
         freeObjects.clear();
     }
-
-    protected void log() {
-
-    }
 }
+
+

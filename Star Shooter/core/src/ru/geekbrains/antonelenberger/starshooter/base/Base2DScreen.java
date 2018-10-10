@@ -67,7 +67,6 @@ public class Base2DScreen implements Screen, InputProcessor {
     }
 
     protected void resize(Rect worldBounds) {
-        System.out.println("resize width= " + worldBounds.getWidth() + " height= " + worldBounds.getHeight());
     }
 
     @Override
@@ -113,7 +112,6 @@ public class Base2DScreen implements Screen, InputProcessor {
     }
 
     public boolean touchDown(Vector2 touch, int pointer) {
-        System.out.println("touchDown touchx = " + touch.x + " touchy = " + touch.y);
         return false;
     }
 
@@ -125,13 +123,11 @@ public class Base2DScreen implements Screen, InputProcessor {
     }
 
     public boolean touchUp(Vector2 touch, int pointer) {
-        System.out.println("touchDown touchx = " + touch.x + " touchy = " + touch.y);
         return false;
     }
 
     @Override
     public boolean touchDragged(int screenX, int screenY, int pointer) {
-        System.out.println("touchDragged screenX = " + screenX + " screenY = "+ screenY);
         return false;
     }
 
